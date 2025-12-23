@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Poppins;
+    background: linear-gradient(312deg,#cc5547,#cb19a5,#504f64);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+}
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
