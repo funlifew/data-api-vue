@@ -69,19 +69,19 @@
                     </td>
                     <td class="px-2 text-sm">{{ user.email }}</td>
                     <td class="px-2 text-sm">{{ user.phone }}</td>
-                    <td class="text-right">
+                    <td class="text-center">
                         <button
-                            class="text-blue-500 hover:bg-blue-50 rounded"
+                            class="text-blue-500 hover:bg-blue-50 rounded mx-2"
                             @click="$emit('edit', user)"
                         >
-                            Edit
+                            <i class="bx bxs-edit"></i>
                         </button>
 
                         <button
                             class="text-red-500 hover:bg-red-50 rounded"
                             @click="$emit('delete', user)"
                         >
-                            Delete
+                            <i class="bx bxs-trash"></i>
                         </button>
                     </td>
                 </tr>
