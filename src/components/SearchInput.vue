@@ -1,5 +1,5 @@
 <script setup>
-import { watch } from 'vue';
+import { ref, watch } from 'vue';
 
     const props = defineProps({
         modelValue: String,
@@ -7,7 +7,13 @@ import { watch } from 'vue';
 
     const emits = defineEmits(['update:modelValue']);
 
-    watch(() => props.modelValue, val => emits('update:modelValue', val));
+    const localValue = ref(props.modelValue);
+
+    watch(() => props.modelValue, val => {
+        localValue.value = val;
+    });
+
+    watch(localValue, val => emits('update:modelValue', val));
 </script>
 
 <template>
@@ -25,7 +31,7 @@ import { watch } from 'vue';
         "></i>
 
         <input
-            v-model="modelValue"
+            v-model="localValue"
             type="text"
             placeholder="Search users..."
             class="
@@ -36,7 +42,6 @@ import { watch } from 'vue';
                 focus:ring
                 w-full
             "
-            
         />
     </div>
 </template>
