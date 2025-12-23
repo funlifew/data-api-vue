@@ -18,7 +18,7 @@ export function useUsers(perPage = 20, totalUsersCount = 1000) {
         error.value = null;
         try{
             const res = await fetch(
-                `https://randomuser.me/api/?page=${page.value}&results=${perPage}&inc=name,email,phone,picutre`
+                `https://randomuser.me/api/?page=${page.value}&results=${perPage}&inc=name,email,phone,picture`
             );
 
             if (!res.ok) throw new Error(`HTTP Error! status: ${res.status}`);
